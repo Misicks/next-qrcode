@@ -1,4 +1,6 @@
 "use client"
+import { MouseEvent, ChangeEvent } from 'react'; // Import the MouseEvent and ChangeEvent types from the 'react' library or appropriate type library
+
 import html2canvas from "html2canvas";
 import { useState, useRef } from "react";
 import { QRCodeCanvas } from "qrcode.react";
@@ -18,12 +20,12 @@ const Qrcode = () => {
 
   const [url, setUrl] = useState("");
 
-  const downloadQRCode = (e) => {
+  const downloadQRCode = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setUrl("");
   };
 
-  const qrCodeEncoder = (e) => {
+  const qrCodeEncoder = (e: ChangeEvent<HTMLInputElement>) => {
     setUrl(e.target.value);
   };
 
