@@ -6,12 +6,14 @@ import { QRCodeCanvas } from "qrcode.react";
 const Qrcode = () => {
   const handleDownload = () => {
     const qrCanvas = document.getElementById("qrCode"); // Get the canvas element directly
-    html2canvas(qrCanvas).then((canvas) => {
-      const link = document.createElement("a");
-      link.download = "qrcode.png";
-      link.href = canvas.toDataURL("image/png");
-      link.click();
-    });
+    if (qrCanvas) {
+      html2canvas(qrCanvas).then((canvas) => {
+        const link = document.createElement("a");
+        link.download = "qrcode.png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+      });
+    }
   };
 
   const [url, setUrl] = useState("");
