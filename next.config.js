@@ -9,6 +9,7 @@ const nextConfig = {
     // This will create an export folder containing the static HTML files
     // that can be served directly or deployed to a static hosting service.
     exportTrailingSlash: true,
+    output: 'export',
   },
 };
 
