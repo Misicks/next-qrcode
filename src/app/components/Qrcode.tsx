@@ -20,7 +20,7 @@ const Qrcode = () => {
 
   const [url, setUrl] = useState("");
 
-  const downloadQRCode = (e: MouseEvent<HTMLButtonElement>) => {
+  const downloadQRCode = (e: MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
     setUrl("");
   };
